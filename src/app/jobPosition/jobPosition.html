@@ -1,0 +1,21 @@
+<div ng-controller="jobPositionApp.controller.addJobPosition">
+
+
+	<form role="form">
+	  <div class="form-group">
+	  	<input type="text" class="form-control" placeholder="job title" ng-model="jobTitle">
+	  </div>
+	  <div class="form-group">
+	  	<input type="text" class="form-control" placeholder="salary" ng-model="salary">
+	  </div>
+	  <div class="form-group">
+	  	<button ng-click="vm.addJob()">Add Job</button> 
+	  	<button ng-click="vm.saveJobs()">Save Jobs</button>
+	  </div>
+	</form>
+	
+	<h3>List of job titles</h3>
+	<ul>
+		<li ng-repeat="job in jobs"> {{ job.title }} - {{ job.salary }}</li>
+	</ul>
+</div>

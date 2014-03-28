@@ -1,0 +1,15 @@
+<div ng-controller="employeeManagerApp.controller.manager">
+	<h3>List of Employees</h3>
+
+	<table class="table">
+  		<tr ng-repeat="employee in employees">
+  			<td>{{ employee.firstName }} {{ employee.lastName }}</td>
+  		</tr>
+	</table>
+
+	<h3>List of Jobs</h3>
+	<ul>
+		<li ng-repeat="job in jobs"> {{ job.title }} {{ job.salary }}</li>
+	</ul>
+	<button ng-click="vm.doSomething()">do something</button>
+</div>
