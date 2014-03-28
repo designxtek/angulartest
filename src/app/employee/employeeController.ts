@@ -26,11 +26,19 @@ module employeeApp {
 		}
 
 		saveEmployee() {
+			var employeesSaved = false;
+
 			this.scope.employees.forEach((employee) => { 
 					this.employeeService.employees.push(employee);
+					employeesSaved = true;
 				});
 			
-			this.scope.message = "Employee List Saved";
+			if(employeesSaved)
+				this.scope.message = "Employee List Saved";
+			else 
+				this.scope.message = "There are no employees to save";
+
+			this.scope.employees = [];
 		}
 	}
 }

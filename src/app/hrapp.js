@@ -37,11 +37,19 @@ var employeeApp;
 
         AddEmployeeController.prototype.saveEmployee = function () {
             var _this = this;
+            var employeesSaved = false;
+
             this.scope.employees.forEach(function (employee) {
                 _this.employeeService.employees.push(employee);
+                employeesSaved = true;
             });
 
-            this.scope.message = "Employee List Saved";
+            if (employeesSaved)
+                this.scope.message = "Employee List Saved";
+            else
+                this.scope.message = "There are no employees to save";
+
+            this.scope.employees = [];
         };
         return AddEmployeeController;
     })();
