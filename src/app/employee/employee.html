@@ -21,8 +21,10 @@
 	  
 	</form>
 
-	<h3>List of employees</h3>
-	<ul>
-		<li ng-repeat="employee in employees">{{ employee.firstName }} {{ employee.lastName}}</li>
-	</ul>
+	<div ng-show="employees.length">
+		<h3>List of employees</h3>
+		<ul>
+			<li ng-repeat="employee in employees">{{ employee.firstName }} {{ employee.lastName}}</li>
+		</ul>
+	</div>
 </div>

@@ -20,10 +20,14 @@ module jobPosition {
 			this.scope.jobs.push({ title: this.scope.jobTitle, salary: this.scope.salary });
 			this.scope.jobTitle = "";
 			this.scope.salary = "";
+			this.scope.message = "Jobs Added";
 		}
 
 		saveJobs() {
-			this.jobsService.jobs = this.scope.jobs;
+			this.scope.jobs.forEach((job) =>{
+					this.jobsService.jobs.push(job);
+				});
+			this.scope.message = "Jobs Saved";
 		}
 	}
 }

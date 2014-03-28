@@ -22,6 +22,12 @@ module employeeManagerApp {
 
 			this.scope.jobs = JobsService.jobs;
 			this.hrIdFactory = HrIdFactory;
+
+			this.scope.selectedJob = [];
+		}
+
+		onJobChange(index: number) {
+			console.log(index);
 		}
 
 		doSomething() {

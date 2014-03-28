@@ -16,7 +16,6 @@ module employeeApp {
 
 			this.scope.employees = [];
 			this.employeeService = EmployeesService;
-
 		}
 
 		addEmployee() {

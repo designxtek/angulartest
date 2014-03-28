@@ -119,10 +119,15 @@ var jobPosition;
             this.scope.jobs.push({ title: this.scope.jobTitle, salary: this.scope.salary });
             this.scope.jobTitle = "";
             this.scope.salary = "";
+            this.scope.message = "Jobs Added";
         };
 
         AddJobPositionController.prototype.saveJobs = function () {
-            this.jobsService.jobs = this.scope.jobs;
+            var _this = this;
+            this.scope.jobs.forEach(function (job) {
+                _this.jobsService.jobs.push(job);
+            });
+            this.scope.message = "Jobs Saved";
         };
         return AddJobPositionController;
     })();
@@ -161,7 +166,13 @@ var employeeManagerApp;
 
             this.scope.jobs = JobsService.jobs;
             this.hrIdFactory = HrIdFactory;
+
+            this.scope.selectedJob = [];
         }
+        ManagerController.prototype.onJobChange = function (index) {
+            console.log(index);
+        };
+
         ManagerController.prototype.doSomething = function () {
             this.hrIdFactory.append();
             console.log('do something');
