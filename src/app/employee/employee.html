@@ -1,5 +1,5 @@
 <div ng-controller="employeeApp.controller.addEmployee">
-	
+	<h1 id="add-employee">Add Employees</h1>
 	<form role="form">
 	  <div class="form-group">
 	    <label>First Name</label>
@@ -11,12 +11,12 @@
 	  </div>
 
 	  <div class="form-group">
-	  	<button ng-click="vm.addEmployee()">add employee</button> 
-		<button ng-click="vm.saveEmployee()">save employees</button>
+	  	<button id="btn-add-employee" ng-click="vm.addEmployee()">add employee</button> 
+		<button id="btn-save-employee" ng-click="vm.saveEmployee()">save employees</button>
 	  </div>
 
 	  <div class="form-group">
-	  	<p class="bg-success" ng-show="message">{{ message }}</p>
+	  	<p class="bg-success" id="message" ng-show="message">{{ message }}</p>
 	  </div>
 	  
 	</form>

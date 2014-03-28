@@ -1,6 +1,7 @@
 <div ng-controller="employeeManagerApp.controller.manager">
-	<h3>List of Employees</h3>
+	<h1 id="title-manage-employee">Manage Employees</h1>
 
+	<h3>List of Employees</h3>
 	<table class="table">
 		<tr>
 			<th>Name</th>
@@ -17,5 +18,5 @@
 	</table>
 
 	What it looks like in the scope: <br />
-	{{ employees }}
+	<div id="scope-message">{{ employees }}</div>
 </div>
