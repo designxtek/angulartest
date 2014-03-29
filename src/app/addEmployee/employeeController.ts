@@ -3,14 +3,22 @@
 module employeeApp {
 
 	angular.module('employeeApp').controller('employeeApp.controller.addEmployee', 
-		['$scope', 'employeeApp.service.employees', '$http',
-			($scope, EmployeesService, $http) => new AddEmployeeController($scope, EmployeesService, $http)]);
+		['$scope', 'employeeApp.service.employees',
+			($scope, EmployeesService, $http) => new AddEmployeeController($scope, EmployeesService)]);
+
+	export interface IAddEmployeeScope extends ng.IScope {
+		vm: AddEmployeeController;
+		employees: model.Employee[];
+		message: string;
+		firstName: string;
+		lastName: string;
+	}
 
 	export class AddEmployeeController {
-		scope: any;
+		scope: IAddEmployeeScope;
 		employeeService: employeeApp.EmployeesService;
 
-		constructor($scope: ng.IScope, EmployeesService: any, $http: ng.IHttpService) {
+		constructor($scope: IAddEmployeeScope, EmployeesService: employeeApp.EmployeesService) {
 			this.scope = $scope;
 			this.scope.vm = this;
 

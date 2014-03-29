@@ -5,7 +5,7 @@ module employeeApp {
 		['$http', ($http) => new EmployeesService($http)]);
 
 	export class EmployeesService {
-		employees: any[] = [];
+		employees: model.Employee[] = [];
 		http: ng.IHttpService;
 
 		constructor($http: ng.IHttpService) {

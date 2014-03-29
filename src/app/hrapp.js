@@ -6,22 +6,31 @@ var employeeApp;
     angular.module('employeeApp').config([
         '$routeProvider', function routes($routeProvider) {
             $routeProvider.when('/employee', {
-                templateUrl: 'app/employee/employee.html',
+                templateUrl: 'app/addEmployee/employee.html',
                 controller: 'employeeApp.controller.addEmployee'
             });
         }]);
 })(employeeApp || (employeeApp = {}));
+var model;
+(function (model) {
+    var Employee = (function () {
+        function Employee() {
+        }
+        return Employee;
+    })();
+    model.Employee = Employee;
+})(model || (model = {}));
 // controller
 var employeeApp;
 (function (employeeApp) {
     angular.module('employeeApp').controller('employeeApp.controller.addEmployee', [
-        '$scope', 'employeeApp.service.employees', '$http',
+        '$scope', 'employeeApp.service.employees',
         function ($scope, EmployeesService, $http) {
-            return new AddEmployeeController($scope, EmployeesService, $http);
+            return new AddEmployeeController($scope, EmployeesService);
         }]);
 
     var AddEmployeeController = (function () {
-        function AddEmployeeController($scope, EmployeesService, $http) {
+        function AddEmployeeController($scope, EmployeesService) {
             this.scope = $scope;
             this.scope.vm = this;
 
@@ -191,7 +200,7 @@ var employeeManagerApp;
 })(employeeManagerApp || (employeeManagerApp = {}));
 /// <reference path="../lib/angular/angular.d.ts" />
 /// <reference path="../lib/angular/angular-route.d.ts" />
-/// <reference path="employee/_employeeReference.ts" />
+/// <reference path="addEmployee/_employeeReference.ts" />
 /// <reference path="jobPosition/_jobPositionReference.ts" />
 /// <reference path="employeeManager/_employeeManagerReference.ts" />
 'use strict';

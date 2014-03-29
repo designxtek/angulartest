@@ -1,6 +1,6 @@
 /// <reference path="../lib/angular/angular.d.ts" />
 /// <reference path="../lib/angular/angular-route.d.ts" />
-/// <reference path="employee/_employeeReference.ts" />
+/// <reference path="addEmployee/_employeeReference.ts" />
 /// <reference path="jobPosition/_jobPositionReference.ts" />
 /// <reference path="employeeManager/_employeeManagerReference.ts" />
 
@@ -24,6 +24,7 @@ module hrApp {
             });
     }]);
 
+    
     angular.module('hrApp').value('hrId', 'abc123');
 
     angular.module('hrApp').service('hrApp.factory.hrId', ['hrId', (hrId) => new HrIdFactory(hrId)]);
